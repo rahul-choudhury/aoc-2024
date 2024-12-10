@@ -1,6 +1,6 @@
-import { readDataFromFile } from "../utils";
+import { readFileSync } from "node:fs";
 
-const data = readDataFromFile("./input.txt");
+const data = readFileSync("./input.txt", "utf8").split(/\n/).filter(Boolean);
 console.log(countSafeReports(data));
 
 function countSafeReports(data: string[]) {
